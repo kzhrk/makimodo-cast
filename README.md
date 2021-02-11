@@ -1,3 +1,3 @@
-# Yattecast
+# インターネットを巻き戻すPodcast
 
-https://r7kamura.github.io/yattecast/
+https://makimodo.net
