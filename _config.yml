@@ -1,12 +1,12 @@
 actors:
-  alice:
-    image_url: /images/actors/alice.png
-    name: alice
-    url: http://makimodo.net
-  bob:
-    image_url: /images/actors/bob.png
-    name: bob
-    url: http://makimodo.net
+  kzhrk:
+    image_url: /images/actors/default.png
+    name: kzhrk
+    url: https://twitter.com/kzhrk0430
+  uematsu:
+    image_url: /images/actors/default.png
+    name: uematsu
+    url: https://twitter.com/shotauematsu
 author: Kazuhiro Kobayashi <info@kzhrk.com>
 description: インターネットを巻き戻すPodcast
 description_long: 古き良きインターネットを取り戻すためにインターネットまわりのことを雑談するPodcast
@@ -30,4 +30,4 @@ sass:
   sass_dir: css
 timezone: Asia/Tokyo
 title: インターネットを巻き戻すPodcast
-url: http://makimodo.net
+url: https://www.makimodo.net
