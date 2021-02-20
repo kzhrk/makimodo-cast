@@ -19,7 +19,7 @@ exclude:
   - LICENSE.txt
   - README.md
   - vendor
-google_analytics: G-LZ3933GFBF
+google_analytics:
 hashtag: makimodo
 itunes_podcast_url:
 keywords: kzhrk,インターネット,podcast,makimodo,インターネットを巻き戻すPodcast
