@@ -1,11 +1,14 @@
 .header {
-  background-image: url(../images/artwork.jpg);
+  background-image: url(../images/artwork.png);
   background-size: cover;
   background-position: center;
 
   &-description {
     color: $color-text-light-secondary;
     font-size: 0.9rem;
+    display: inline-block;
+    background-color: rgba(51, 51, 51, 0.75);
+    padding: 0 .5rem;
   }
 
   &-heading {
