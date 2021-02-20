@@ -19,6 +19,7 @@
           <section class="card-body markdown">
             <p>
               <audio
+                id="js-audio"
                 class="mejs-player"
                 controls=""
                 data-mejsoptions='{"alwaysShowControls": true, "alwaysShowHours": true, "enableAutosize": true, "features": ["playpause", "progress", "current", "duration", "volume", "speed"]}'
@@ -63,5 +64,14 @@
       </div>
     </main>
     {% include footer.html %}
+    <script>
+      var audio = document.getElementById('js-audio');
+      audio.addEventListener('play', function() {
+        dataLayer.push({
+          episode: audio.src,
+          event: 'play_episode'
+        });
+      })
+    </script>
   </body>
 </html>
