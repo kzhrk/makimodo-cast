@@ -68,13 +68,13 @@
     {% include footer.html %}
     <script>
       var audio = document.getElementById('js-audio');
-      var episode = audio.src.replace(/.*(\d+)\.mp3$/, '$1')
+      var episode = audio.src.replace(/\/([0-9]+)\.mp3$/, '$1');
       audio.addEventListener('play', function() {
         dataLayer.push({
           episode: episode,
           event: 'play_episode'
         });
-      })
+      });
     </script>
   </body>
 </html>
