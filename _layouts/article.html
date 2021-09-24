@@ -68,6 +68,8 @@
     {% include footer.html %}
     <script>
       var audio = document.getElementById('js-audio');
+      
+      // GTM
       var episode = audio.src.replace(/\/([0-9]+)\.mp3$/, '$1');
       audio.addEventListener('play', function() {
         dataLayer.push({
@@ -75,6 +77,31 @@
           event: 'play_episode'
         });
       });
+
+      // chapter
+      function getSecondsFromTime(time) {
+        var [seconds, minutes, hours] = time.split(':').reverse();
+        var currentTime = parseInt(seconds, 10);
+        if (minutes) currentTime += parseInt(60 * minutes, 10);
+        if (hours) currentTime += parseInt(60 * 60 * hours, 10);
+        return currentTime;
+      }
+
+      var time = location.hash.replace(/.*#t=([\d:]+).*/, '$1');
+      if (time) {
+        audio.currentTime = getSecondsFromTime(time)
+      }
+
+      // chapter link
+      var anchors = document.querySelector('#chapters').nextElementSibling.querySelectorAll('a');
+      anchors.forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+          var time = e.target.href.replace(/.*#t=([\d:]+).*/, '$1');
+          var currentTime = getSecondsFromTime(time);
+          audio.currentTime = currentTime;
+          audio.play()
+        })
+      })
     </script>
   </body>
 </html>
