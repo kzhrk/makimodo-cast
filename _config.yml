@@ -21,7 +21,7 @@ exclude:
   - vendor
 google_analytics:
 hashtag: makimodo
-itunes_podcast_url:
+itunes_podcast_url: https://podcasts.apple.com/jp/podcast/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%92%E5%B7%BB%E3%81%8D%E6%88%BB%E3%81%99podcast/id1554626944
 keywords: kzhrk,インターネット,podcast,makimodo,インターネットを巻き戻すPodcast
 language: ja
 markdown: kramdown
