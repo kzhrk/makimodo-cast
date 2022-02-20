@@ -2,15 +2,22 @@ actors:
   kzhrk:
     image_url: /images/actors/kzhrk.jpg
     name: kzhrk
-    url: https://twitter.com/kzhrk0430
+    description: |
+      Frontend engineer.
+      Podcast内では「かっぴ」「コバさん」の愛称で呼ばれている。
+    links:
+      - name: Twitter
+        url: https://twitter.com/kzhrk0430
+      - name: GitHub
+        url: https://github.com/kzhrk
+      - name: kzhrk.dev
+        url: https://kzhrk.dev
   uematsu:
     image_url: /images/actors/uematsu.jpg
     name: uematsu
-    url: https://twitter.com/shotauematsu
   goto:
     image_url: /images/actors/goto.png
     name: goto
-    url: https://twitter.com/takehitogoto
 author: Kazuhiro Kobayashi - info@kzhrk.com
 description: インターネットを巻き戻すPodcast
 description_long: 古き良きインターネットを取り戻すためにインターネットまわりのことを雑談するPodcast

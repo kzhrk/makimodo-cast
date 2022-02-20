@@ -1,0 +1,34 @@
+---
+layout: default
+actor_ids:
+  - kzhrk
+  - uematsu
+  - goto
+---
+
+<div class="container">
+  <section class="actors">
+    <h2>出演者</h2>
+    {% for actor_id in page.actor_ids %}
+      {% assign actor = site.actors[actor_id] %}
+      <figure>
+        <img src="{{ actor.image_url }}" alt="{{ actor.name }}" class="actor-image" width="120" height="120">
+        <figcaption>
+          <h3 id="anchor_{{ actor_id }}">{{ actor.name }}</h3>
+          {% if actor.description %}
+            <p>{{ actor.description }}</p>
+          {% endif %}
+          <ul>
+            {% if actor.links %}
+              {% for link in actor.links %}
+              <li>
+                <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.name }}</a>
+              </li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+        </figcaption>
+      </figure>
+    {% endfor %}
+  </section>
+</div>
