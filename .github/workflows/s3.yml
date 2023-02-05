@@ -1,0 +1,35 @@
+name: deploy s3
+
+on:
+  push:
+
+jobs:
+  check-secret:
+    runs-on: ubuntu-latest
+    outputs:
+      my-key: ${{ steps.my-key.outputs.defined }}
+    steps:
+      - id: my-key
+        if: "${{ env.MY_KEY != '' }}"
+        run: echo "::set-output name=defined::true"
+        env:
+          MY_KEY: ${{ secrets.AWS_ROLE_ARN }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: 
+      - check-secret
+    if: needs.check-secret.outputs.my-key == 'true'
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup AWS
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Upload audio
+        run: |
+          aws s3 cp ./audio/1.mp3 s3://${{ secrets.BUCKET_NAME }}/
